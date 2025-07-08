@@ -69,6 +69,61 @@ mern-testing/
 - Cypress/Playwright: End-to-end testing framework
 - MongoDB Memory Server: In-memory MongoDB for testing
 
+## Testing Strategy
+
+This project uses a comprehensive testing approach:
+
+- **Unit Tests:**
+  - Client: React components tested with Jest and React Testing Library (see `client/src/tests/unit/`).
+  - Server: Functions and logic tested with Jest (see `server/tests/unit/`).
+- **Integration Tests:**
+  - Client: Component interactions (see `client/src/tests/integration/`).
+  - Server: API endpoints tested with Supertest and in-memory MongoDB (see `server/tests/integration/`).
+- **End-to-End (E2E) Tests:**
+  - Cypress tests simulate real user flows (see `client/cypress/e2e/`).
+
+## Running Tests
+
+### Client Unit/Integration Tests
+```
+cd client
+npm install
+npm test
+```
+
+### Server Unit/Integration Tests
+```
+cd server
+npm install
+npm test
+```
+
+### E2E Tests (Cypress)
+```
+cd client
+npm install
+npx cypress open
+```
+Or run headless:
+```
+npx cypress run
+```
+
+## Code Coverage
+
+To generate coverage reports:
+- For client: `npm test -- --coverage`
+- For server: `npm test -- --coverage`
+
+Coverage reports will be in the `coverage/` directory. Aim for at least 70% coverage.
+
+## Debugging Techniques
+
+- Use `console.log` in both client and server code to trace values.
+- Use React Error Boundaries for catching UI errors.
+- Use try/catch in async server functions and log errors.
+- Use VSCode/Node.js debuggers for step-through debugging.
+
 ## Submission
 
 Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
